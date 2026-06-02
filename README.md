@@ -4,6 +4,72 @@ A collection of Claude Code skills covering Digital Public Infrastructure (DPI) 
 
 **Design principles**: Technology-neutral, vendor-neutral, globally applicable. Core framing: DPI as public rails that enable government scale *and* private sector innovation simultaneously.
 
+## Installation
+
+### Claude Code (CLI)
+
+**One-line install** — clone the repo and copy all skills to Claude Code's skill directory:
+
+```bash
+git clone https://github.com/centre-for-dpi/ai-skills.git
+cd ai-skills
+for f in skills/*.md; do
+  name=$(basename "$f" .md)
+  mkdir -p ~/.claude/skills/"$name"
+  cp "$f" ~/.claude/skills/"$name"/SKILL.md
+done
+```
+
+Restart Claude Code (or start a new session) to pick up the new skills.
+
+**Verify installation:**
+
+```bash
+ls ~/.claude/skills/ | grep dpi
+```
+
+You should see directories like `dpi-101`, `dpi-payments`, `verifiable-credentials`, etc.
+
+**Use a skill** — type its name as a slash command in any Claude Code session:
+
+```
+/dpi-101
+/dpi-payments
+/verifiable-credentials
+```
+
+**Update to the latest skills:**
+
+```bash
+cd ai-skills
+git pull
+for f in skills/*.md; do
+  name=$(basename "$f" .md)
+  mkdir -p ~/.claude/skills/"$name"
+  cp "$f" ~/.claude/skills/"$name"/SKILL.md
+done
+```
+
+**Remove all DPI skills:**
+
+```bash
+ls skills/ | sed 's/\.md$//' | xargs -I{} rm -rf ~/.claude/skills/{}
+```
+
+---
+
+### Claude Cowork
+
+1. Download the latest `dpi-skills.plugin` file from [GitHub Releases](https://github.com/centre-for-dpi/ai-skills/releases).
+2. Open Claude Cowork.
+3. Drag the `.plugin` file into the Cowork window, or go to **Settings → Plugins → Install from file** and select the file.
+4. Click **Accept** in the plugin preview to confirm installation.
+5. Skills are immediately available — invoke them by name (e.g. `/dpi-101`).
+
+**Update:** Download the latest release and repeat the install — Cowork will replace the previous version.
+
+---
+
 ## Available Skills
 
 ### Foundations
