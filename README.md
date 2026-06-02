@@ -65,25 +65,6 @@ A collection of Claude Code skills covering Digital Public Infrastructure (DPI) 
 |-------|-------------|
 | `/dpi-use-cases` | End-to-end DPI use cases — health, financial inclusion, social protection, agriculture, education |
 
-## Installation
-
-### For a specific DPI project
-```bash
-# Copy into your project
-cp -r /path/to/dpi-skills/.claude/ /your/project/.claude/
-```
-
-### User-level (all projects)
-```bash
-mkdir -p ~/.claude/skills
-cp -r /path/to/dpi-skills/.claude/skills/* ~/.claude/skills/
-```
-
-### Clone from GitHub
-```bash
-git clone https://github.com/dabadie/dpi-skills.git
-cp -r dpi-skills/.claude/skills/* /your/project/.claude/skills/
-```
 
 ## Usage
 
@@ -138,11 +119,3 @@ Invoke any skill in Claude Code with its name:
 - **X-Road**: https://x-road.global/
 - **OpenFn (DPG workflow automation)**: https://openfn.org | https://docs.openfn.org
 - **n8n (visual AI workflow automation)**: https://n8n.io | https://docs.n8n.io
-
-## Contributing
-
-Skills follow the Claude Code skill format:
-- Stored in `.claude/skills/<skill-name>/SKILL.md`
-- YAML frontmatter with `name` and `description`
-- Technology-neutral, globally applicable content
-- Multiple referenc
